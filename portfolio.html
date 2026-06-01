@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishu Pandey | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Space Grotesk', 'sans-serif']
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#050505',
+                            card: '#0f0f12',
+                            accent: '#6366f1',
+                            border: '#1e1e24'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050505; color: #e2e8f0; }
+        .glass-card {
+            background: #0f0f12;
+            border: 1px solid #1e1e24;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .glass-card:hover {
+            border-color: #6366f1;
+            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #fff 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-accent selection:text-white">
+
+    <header class="pt-32 pb-16 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="font-heading text-6xl md:text-8xl font-black tracking-tighter leading-none mb-4 text-gradient">
+                RISHU PANDEY
+            </h1>
+            <p class="text-brand-accent font-bold tracking-[0.3em] uppercase text-sm mb-8">Software Engineer & ServiceNow Administrator</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto mb-12">
+                <div class="glass-card p-4 rounded-2xl flex items-center justify-center gap-3">
+                    <i class="fas fa-phone text-brand-accent"></i>
+                    <span class="text-sm font-semibold">+91 9693086631</span>
+                </div>
+                <div class="glass-card p-4 rounded-2xl flex items-center justify-center gap-3">
+                    <i class="fas fa-envelope text-brand-accent"></i>
+                    <span class="text-sm font-semibold">rishupadney9546@gmail.com</span>
+                </div>
+                <div class="glass-card p-4 rounded-2xl flex items-center justify-center gap-3">
+                    <i class="fas fa-map-marker-alt text-brand-accent"></i>
+                    <span class="text-sm font-semibold">Amalapuram, AP</span>
+                </div>
+            </div>
+            
+            <div class="flex justify-center gap-4">
+                <a href="https://linkedin.com/in/rishu-pandey-776907292" target="_blank" class="bg-brand-accent text-white px-8 py-3 rounded-full font-bold text-xs uppercase tracking-widest hover:scale-105 transition shadow-lg shadow-brand-accent/20">LinkedIn Profile</a>
+                <a href="https://www.credly.com/users/rishu-pandey.98961016" target="_blank" class="glass-card text-white px-8 py-3 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-brand-border transition">View Badges</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 pb-32">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            
+            <div class="md:col-span-8 glass-card p-10 rounded-[40px] relative overflow-hidden">
+                <div class="relative z-10">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-brand-accent/10 rounded-xl flex items-center justify-center text-brand-accent text-xl">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold">Academic Foundation</h2>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">BVC Institute of Technology & Science</h3>
+                    <p class="text-slate-400 mb-6">B.Tech in Computer Science & Engineering (2023 - Present)</p>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-black/40 p-4 rounded-2xl border border-brand-border">
+                            <p class="text-[10px] text-slate-500 font-bold uppercase mb-1">Current CGPA</p>
+                            <p class="text-xl font-heading font-bold text-brand-accent">8.57</p>
+                        </div>
+                        <div class="bg-black/40 p-4 rounded-2xl border border-brand-border">
+                            <p class="text-[10px] text-slate-500 font-bold uppercase mb-1">Semester</p>
+                            <p class="text-xl font-heading font-bold">4th</p>
+                        </div>
+                        <div class="bg-black/40 p-4 rounded-2xl border border-brand-border">
+                            <p class="text-[10px] text-slate-500 font-bold uppercase mb-1">Registration</p>
+                            <p class="text-xs font-bold">23H41A0549</p>
+                        </div>
+                        <div class="bg-black/40 p-4 rounded-2xl border border-brand-border">
+                            <p class="text-[10px] text-slate-500 font-bold uppercase mb-1">Status</p>
+                            <p class="text-xs font-bold text-emerald-500">Autonomous</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-4 glass-card p-4 rounded-[40px] flex flex-col">
+                <img src="ppic1.png" class="rounded-[32px] w-full aspect-square object-cover grayscale hover:grayscale-0 transition duration-700 mb-6" alt="Rishu Pandey">
+                <div class="px-4 pb-4">
+                    <p class="text-[10px] text-brand-accent font-black uppercase tracking-widest mb-1">Leadership</p>
+                    <h4 class="font-bold">IEEE Student Chair</h4>
+                    <p class="text-xs text-slate-500">Computer Society (Vizag Bay)</p>
+                </div>
+            </div>
+
+            <div class="md:col-span-12">
+                <h3 class="font-heading text-3xl font-bold mb-8 mt-12">The <span class="text-brand-accent">Tech Stack.</span></h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    <div class="glass-card p-6 rounded-3xl">
+                        <i class="fab fa-java text-3xl text-orange-500 mb-4"></i>
+                        <h4 class="font-bold mb-2">Java & DSA</h4>
+                        <p class="text-xs text-slate-500">Oracle Academy Certified. 150+ LeetCode solved.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-3xl">
+                        <div class="flex gap-2 mb-4">
+                            <i class="fab fa-html5 text-3xl text-orange-600"></i>
+                            <i class="fab fa-css3-alt text-3xl text-blue-500"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Web Dev</h4>
+                        <p class="text-xs text-slate-500">Certified by Infosys. HTML5, CSS3, React JS.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-3xl">
+                        <i class="fas fa-database text-3xl text-emerald-500 mb-4"></i>
+                        <h4 class="font-bold mb-2">SQL</h4>
+                        <p class="text-xs text-slate-500">HackerRank Certified. Relational DB Management.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-3xl border-brand-accent/30">
+                        <i class="fas fa-sync text-3xl text-brand-accent mb-4"></i>
+                        <h4 class="font-bold mb-2">ServiceNow</h4>
+                        <p class="text-xs text-slate-500">Certified Admin (Micro) & Workflow automation.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-3xl">
+                        <i class="fab fa-aws text-3xl text-amber-500 mb-4"></i>
+                        <h4 class="font-bold mb-2">AWS Cloud</h4>
+                        <p class="text-xs text-slate-500">Academy Graduate. Grade-O Virtual Internship.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-12 mt-12">
+                <h3 class="font-heading text-3xl font-bold mb-8">Professional <span class="text-brand-accent italic">Journey.</span></h3>
+                <div class="space-y-4">
+                    <div class="glass-card p-6 rounded-3xl flex justify-between items-center group">
+                        <div class="flex items-center gap-6">
+                            <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-brand-accent transition">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Java Full Stack Development</h4>
+                                <p class="text-sm text-slate-500">Talent Shine India | 120 Hours Industrial Internship</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-slate-500 uppercase tracking-widest hidden md:block">July 2025</span>
+                    </div>
+                    <div class="glass-card p-6 rounded-3xl flex justify-between items-center group">
+                        <div class="flex items-center gap-6">
+                            <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-brand-accent transition">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Python Full Stack Virtual Internship</h4>
+                                <p class="text-sm text-slate-500">EduSkills | AICTE Recognized (Oct - Dec 2024)</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-slate-500 uppercase tracking-widest hidden md:block">Late 2024</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="py-20 border-t border-brand-border text-center">
+        <p class="text-[10px] font-bold text-slate-600 uppercase tracking-[0.8em]">Rishu Pandey • Built for Excellence • 2026</p>
+    </footer>
+
+</body>
+</html>
