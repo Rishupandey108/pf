@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rishu Pandey | Full Stack Java Developer</title>
+    <meta name="description" content="Rishu Pandey - Full Stack Java Developer & ServiceNow Administrator. 1000+ LeetCode problems solved. AWS Certified. BVC Institute of Technology and Science.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -19,9 +20,9 @@
                         brand: {
                             dark: '#0f172a',
                             light: '#1e293b',
-                            accent: '#38bdf8', // Cyan
-                            glow: '#818cf8',   // Indigo
-                            aws: '#FF9900'     // AWS Orange
+                            accent: '#38bdf8',
+                            glow: '#818cf8',
+                            aws: '#FF9900'
                         }
                     },
                     animation: {
@@ -44,23 +45,26 @@
             color: #e2e8f0;
             overflow-x: hidden;
         }
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #38bdf8;
-            border-radius: 5px;
-        }
-        /* Glassmorphism Card */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(#38bdf8, #818cf8); border-radius: 5px; }
         .glass-card {
             background: rgba(30, 41, 59, 0.7);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+        }
+        .glass-card-hover {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .glass-card-hover:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 20px 60px -10px rgba(56, 189, 248, 0.15);
+            transform: translateY(-6px);
         }
         .neon-text {
             text-shadow: 0 0 10px rgba(56, 189, 248, 0.7), 0 0 20px rgba(56, 189, 248, 0.5);
@@ -68,30 +72,58 @@
         .gradient-bg {
             background: radial-gradient(circle at top right, #1e1b4b, #0f172a);
         }
+        .project-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .project-card:hover {
+            border-color: rgba(56, 189, 248, 0.5);
+            box-shadow: 0 20px 60px -10px rgba(56, 189, 248, 0.2);
+            transform: translateY(-8px);
+        }
+        .tag {
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            color: #93c5fd;
+            font-size: 0.7rem;
+            padding: 2px 10px;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+        .leetcode-orange { color: #FFA116; }
+        .section-heading {
+            display: inline-block;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #38bdf8;
+        }
     </style>
 </head>
 <body class="gradient-bg relative">
 
+    <!-- Animated Background Blobs -->
     <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
         <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
         <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style="animation-delay: 2s"></div>
         <div class="absolute top-[40%] left-[40%] w-72 h-72 bg-brand-aws rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float" style="animation-delay: 4s"></div>
     </div>
 
-    <nav class="fixed w-full z-50 top-0 start-0 glass-card border-b border-gray-700">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 start-0 glass-card border-b border-gray-700/50">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <a href="#" class="flex items-center space-x-3">
                 <span class="self-center text-2xl font-bold whitespace-nowrap text-white">Rishu<span class="text-brand-accent">.dev</span></span>
             </a>
             <div class="hidden w-full md:block md:w-auto">
-                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
-                    <li><a href="#about" class="block py-2 px-3 text-gray-300 hover:text-brand-accent transition">About</a></li>
-                    <li><a href="#skills" class="block py-2 px-3 text-gray-300 hover:text-brand-accent transition">Skills</a></li>
-                    <li><a href="#experience" class="block py-2 px-3 text-gray-300 hover:text-brand-accent transition">Experience</a></li>
-                    <li><a href="#certifications" class="block py-2 px-3 text-gray-300 hover:text-brand-accent transition">Badges</a></li>
+                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0">
+                    <li><a href="#about" id="nav-about" class="block py-2 px-3 text-gray-300 hover:text-brand-accent transition">About</a></li>
+                    <li><a href="#skills" id="nav-skills" class="block py-2 px-3 text-gray-300 hover:text-brand-accent transition">Skills</a></li>
+                    <li><a href="#projects" id="nav-projects" class="block py-2 px-3 text-gray-300 hover:text-brand-accent transition">Projects</a></li>
+                    <li><a href="#experience" id="nav-experience" class="block py-2 px-3 text-gray-300 hover:text-brand-accent transition">Experience</a></li>
+                    <li><a href="#certifications" id="nav-certs" class="block py-2 px-3 text-gray-300 hover:text-brand-accent transition">Badges</a></li>
                 </ul>
             </div>
-            <a href="https://www.credly.com/users/rishu-pandey.98961016" target="_blank" class="hidden md:inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-brand-aws to-orange-600 group-hover:from-brand-aws group-hover:to-orange-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-orange-800">
+            <a href="https://www.credly.com/users/rishu-pandey.98961016" target="_blank" id="verify-credentials-btn" class="hidden md:inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-brand-aws to-orange-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-orange-800">
                 <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-900 rounded-md group-hover:bg-opacity-0">
                     Verify Credentials
                 </span>
@@ -99,43 +131,59 @@
         </div>
     </nav>
 
+    <!-- HERO SECTION -->
     <section id="about" class="min-h-screen flex items-center justify-center pt-20 px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl w-full">
             <div class="order-2 md:order-1 space-y-6">
                 <div class="inline-block px-3 py-1 rounded-full border border-brand-accent/30 bg-brand-accent/10 text-brand-accent text-sm font-semibold mb-2">
-                    <i class="fas fa-circle text-[10px] mr-2 animate-pulse"></i>Job Required.
+                    <i class="fas fa-circle text-[10px] mr-2 animate-pulse"></i>Open to Opportunities
                 </div>
                 <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight">
                     I am <br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 neon-text">Rishu Pandey</span>
                 </h1>
                 <p class="text-xl text-gray-400 max-w-lg">
-                    <strong></strong><strong>Full Stack Java Developer</strong>.
-                     power merging <span class="text-brand-aws font-bold"></span> with modern web technologies to build scalable solutions.
+                    <strong class="text-white">Full Stack Java Developer</strong> &amp; <strong class="text-purple-400">ServiceNow Administrator</strong>. Building scalable solutions by merging <span class="text-brand-aws font-bold">Cloud Power</span> with modern web technologies.
                 </p>
                 
-                <div class="flex gap-6 py-4">
-                    <div class="text-center">
-                        <span class="block text-3xl font-bold text-white">1000+</span> <span class="text-sm text-gray-400">LeetCode Solved</span>
-                    </div>
+                <!-- Stats Row -->
+                <div class="flex flex-wrap gap-6 py-4">
+                    <a href="https://leetcode.com/u/23h41a0549/" target="_blank" id="leetcode-stat" class="text-center hover:scale-105 transition group">
+                        <span class="block text-3xl font-bold leetcode-orange">1000+</span>
+                        <span class="text-sm text-gray-400 flex items-center gap-1 mt-1">
+                            <i class="fas fa-code text-xs"></i> LeetCode Solved
+                        </span>
+                    </a>
                     <div class="h-12 w-px bg-gray-700"></div>
                     <div class="text-center">
                         <span class="block text-3xl font-bold text-white">8.69</span>
-                        <span class="text-sm text-gray-400">CGPA(B.Tech)</span>
+                        <span class="text-sm text-gray-400">CGPA (B.Tech)</span>
                     </div>
                     <div class="h-12 w-px bg-gray-700"></div>
                     <div class="text-center">
                         <span class="block text-3xl font-bold text-brand-aws">3+</span>
                         <span class="text-sm text-gray-400">Cloud Badges</span>
                     </div>
+                    <div class="h-12 w-px bg-gray-700"></div>
+                    <div class="text-center">
+                        <span class="block text-3xl font-bold text-purple-400">195</span>
+                        <span class="text-sm text-gray-400">Day Streak</span>
+                    </div>
                 </div>
 
-                <div class="flex flex-wrap gap-4">
-                    <a href="mailto:rishupadney9546@gmail.com" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-3 text-center me-2 mb-2 shadow-lg shadow-blue-500/50">
-                        Contact Me
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap gap-3">
+                    <a href="mailto:rishupadney9546@gmail.com" id="contact-btn" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br font-medium rounded-lg text-sm px-5 py-3 text-center shadow-lg shadow-blue-500/50 transition hover:scale-105">
+                        <i class="fas fa-envelope mr-2"></i>Contact Me
                     </a>
-                    <a href="https://linkedin.com/in/rishu-pandey-776907292" target="_blank" class="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-3 text-center inline-flex items-center me-2 mb-2">
-                        <i class="fab fa-linkedin-in mr-2"></i> LinkedIn
+                    <a href="https://linkedin.com/in/rishu-pandey-776907292" target="_blank" id="linkedin-btn" class="text-white bg-[#0077B5] hover:bg-[#005e94] font-medium rounded-lg text-sm px-5 py-3 text-center inline-flex items-center transition hover:scale-105">
+                        <i class="fab fa-linkedin-in mr-2"></i>LinkedIn
+                    </a>
+                    <a href="https://github.com/Rishupandey108" target="_blank" id="github-btn" class="text-white bg-gray-800 hover:bg-gray-700 font-medium rounded-lg text-sm px-5 py-3 text-center inline-flex items-center transition hover:scale-105">
+                        <i class="fab fa-github mr-2"></i>GitHub
+                    </a>
+                    <a href="https://leetcode.com/u/23h41a0549/" target="_blank" id="leetcode-btn" class="text-black font-bold rounded-lg text-sm px-5 py-3 text-center inline-flex items-center transition hover:scale-105" style="background-color:#FFA116;">
+                        <i class="fas fa-code mr-2"></i>LeetCode
                     </a>
                 </div>
             </div>
@@ -145,99 +193,275 @@
                 <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl shadow-cyan-500/20 z-10">
                     <img src="ppic.png" alt="Rishu Pandey" class="w-full h-full object-cover">
                 </div>
+                <!-- Floating badge -->
+                <div class="absolute bottom-4 right-4 md:right-0 glass-card px-4 py-2 rounded-full border border-brand-accent/30 z-20 flex items-center gap-2">
+                    <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span class="text-xs text-gray-300 font-semibold">Available for hire</span>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- SKILLS SECTION -->
     <section id="skills" class="py-20 px-4">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12"><span class="border-b-4 border-brand-accent pb-2">Technical Knowledge Stack</span></h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12"><span class="section-heading">Technical Knowledge Stack</span></h2>
             
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition duration-300 border-t-4 border-brand-aws">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Cloud -->
+                <div class="glass-card-hover p-6 rounded-2xl border-t-4 border-brand-aws">
                     <div class="text-brand-aws text-4xl mb-4"><i class="fab fa-aws"></i></div>
-                    <h3 class="text-xl font-bold mb-4">Cloud Computing</h3>
-                    <p class="text-sm text-gray-400 mb-4">AWS Certified & Trained</p>
+                    <h3 class="text-xl font-bold mb-2">Cloud Computing</h3>
+                    <p class="text-sm text-gray-400 mb-4">AWS Certified &amp; Trained</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-orange-900/30 text-orange-300 text-xs font-medium px-2.5 py-1 rounded border border-brand-aws">Cloud Architecting</span>
-                        <span class="bg-orange-900/30 text-orange-300 text-xs font-medium px-2.5 py-1 rounded border border-brand-aws">Cloud Foundations</span>
-                        <span class="bg-orange-900/30 text-orange-300 text-xs font-medium px-2.5 py-1 rounded border border-brand-aws">Virtual Internship</span>
+                        <span class="tag" style="border-color:rgba(255,153,0,0.4);color:#fbbf24">Cloud Architecting</span>
+                        <span class="tag" style="border-color:rgba(255,153,0,0.4);color:#fbbf24">Cloud Foundations</span>
+                        <span class="tag" style="border-color:rgba(255,153,0,0.4);color:#fbbf24">Virtual Internship</span>
                     </div>
                 </div>
 
-                <div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition duration-300 border-t-4 border-blue-500">
+                <!-- Development -->
+                <div class="glass-card-hover p-6 rounded-2xl border-t-4 border-blue-500">
                     <div class="text-brand-accent text-4xl mb-4"><i class="fas fa-code"></i></div>
-                    <h3 class="text-xl font-bold mb-4">Development</h3>
+                    <h3 class="text-xl font-bold mb-2">Development</h3>
+                    <p class="text-sm text-gray-400 mb-4">Full Stack &amp; Systems</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-800 text-blue-300 text-xs font-medium px-2.5 py-1 rounded border border-blue-400">Java Full Stack</span>
-                        <span class="bg-gray-800 text-blue-300 text-xs font-medium px-2.5 py-1 rounded border border-blue-400">HTML5 / CSS3</span>
-                        <span class="bg-gray-800 text-blue-300 text-xs font-medium px-2.5 py-1 rounded border border-blue-400">Python</span>
-                        <span class="bg-gray-800 text-blue-300 text-xs font-medium px-2.5 py-1 rounded border border-blue-400">C Language</span>
-                        <span class="bg-gray-800 text-blue-300 text-xs font-medium px-2.5 py-1 rounded border border-blue-400">SQL</span>
+                        <span class="tag">Java Full Stack</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">React JS</span>
+                        <span class="tag">HTML5 / CSS3</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">C Language</span>
+                        <span class="tag">SQL</span>
                     </div>
                 </div>
 
-                <div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition duration-300 border-t-4 border-purple-500">
-                    <div class="text-purple-400 text-4xl mb-4"><i class="fas fa-server"></i></div>
-                    <h3 class="text-xl font-bold mb-4">Specialized</h3>
+                <!-- AI & Specialized -->
+                <div class="glass-card-hover p-6 rounded-2xl border-t-4 border-purple-500">
+                    <div class="text-purple-400 text-4xl mb-4"><i class="fas fa-brain"></i></div>
+                    <h3 class="text-xl font-bold mb-2">AI / ML &amp; Specialized</h3>
+                    <p class="text-sm text-gray-400 mb-4">Emerging Technologies</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-purple-900/30 text-purple-200 text-xs font-medium px-2.5 py-1 rounded border border-purple-400">ServiceNow Admin</span>
-                        <span class="bg-gray-800 text-gray-300 text-xs font-medium px-2.5 py-1 rounded border border-gray-600">DSA</span>
-                        <span class="bg-gray-800 text-gray-300 text-xs font-medium px-2.5 py-1 rounded border border-gray-600">1000+ LeetCode</span>
+                        <span class="tag" style="border-color:rgba(167,139,250,0.4);color:#c4b5fd">Machine Learning</span>
+                        <span class="tag" style="border-color:rgba(167,139,250,0.4);color:#c4b5fd">XGBoost</span>
+                        <span class="tag" style="border-color:rgba(167,139,250,0.4);color:#c4b5fd">LLaMA 3 / LLMs</span>
+                        <span class="tag" style="border-color:rgba(167,139,250,0.4);color:#c4b5fd">Groq API</span>
+                        <span class="tag" style="border-color:rgba(167,139,250,0.4);color:#c4b5fd">Cohere AI</span>
+                        <span class="tag" style="border-color:rgba(167,139,250,0.4);color:#c4b5fd">ServiceNow Admin</span>
+                        <span class="tag" style="border-color:rgba(167,139,250,0.4);color:#c4b5fd">DSA</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="glass-card-hover p-6 rounded-2xl border-t-4 border-green-500">
+                    <div class="text-green-400 text-4xl mb-4"><i class="fas fa-tools"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Tools &amp; DevOps</h3>
+                    <p class="text-sm text-gray-400 mb-4">Dev Infrastructure</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag" style="border-color:rgba(74,222,128,0.4);color:#86efac">Git &amp; GitHub</span>
+                        <span class="tag" style="border-color:rgba(74,222,128,0.4);color:#86efac">Maven</span>
+                        <span class="tag" style="border-color:rgba(74,222,128,0.4);color:#86efac">Hibernate</span>
+                        <span class="tag" style="border-color:rgba(74,222,128,0.4);color:#86efac">Oracle DB</span>
+                        <span class="tag" style="border-color:rgba(74,222,128,0.4);color:#86efac">MongoDB</span>
+                        <span class="tag" style="border-color:rgba(74,222,128,0.4);color:#86efac">REST APIs</span>
+                    </div>
+                </div>
+
+                <!-- DSA / LeetCode -->
+                <div class="glass-card-hover p-6 rounded-2xl border-t-4 col-span-1 md:col-span-2 lg:col-span-2" style="border-color:#FFA116">
+                    <div class="flex items-start justify-between flex-wrap gap-4">
+                        <div>
+                            <div class="leetcode-orange text-4xl mb-4"><i class="fas fa-trophy"></i></div>
+                            <h3 class="text-xl font-bold mb-2">DSA &amp; Competitive Programming</h3>
+                            <p class="text-sm text-gray-400 mb-4">LeetCode &bull; CodeForces &bull; CodeChef</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tag" style="border-color:rgba(255,161,22,0.4);color:#fbbf24">1000+ Problems Solved</span>
+                                <span class="tag" style="border-color:rgba(255,161,22,0.4);color:#fbbf24">195-Day Streak</span>
+                                <span class="tag" style="border-color:rgba(255,161,22,0.4);color:#fbbf24">Top 15% LeetCode</span>
+                                <span class="tag" style="border-color:rgba(255,161,22,0.4);color:#fbbf24">Dynamic Programming</span>
+                                <span class="tag" style="border-color:rgba(255,161,22,0.4);color:#fbbf24">Graphs &amp; Sorting</span>
+                                <span class="tag" style="border-color:rgba(255,161,22,0.4);color:#fbbf24">Sliding Window</span>
+                                <span class="tag" style="border-color:rgba(255,161,22,0.4);color:#fbbf24">BFS/DFS</span>
+                            </div>
+                        </div>
+                        <a href="https://leetcode.com/u/23h41a0549/" target="_blank" id="leetcode-profile-btn" class="flex-shrink-0 px-5 py-2.5 rounded-lg text-sm font-bold transition hover:scale-105 hover:shadow-lg" style="background:#FFA116;color:#000;">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Profile
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="py-20 px-4 bg-slate-900/30">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4"><span class="section-heading">Featured Projects</span></h2>
+            <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">Real-world applications built with modern tech stacks. Click any project to explore the code.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project 1: E-Commerce Web App -->
+                <div class="project-card rounded-2xl overflow-hidden flex flex-col">
+                    <div class="h-2 bg-gradient-to-r from-blue-500 to-cyan-400"></div>
+                    <div class="p-7 flex flex-col h-full">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <a href="https://github.com/Rishupandey108/ShopX" target="_blank" id="shopx-github-btn" class="text-gray-400 hover:text-brand-accent transition text-lg" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">E-Commerce Web App <span class="text-brand-accent">(ShopX)</span></h3>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow">Full-stack e-commerce platform with REST API, image upload, keyword search, cart checkout, and 7 RESTful endpoints for CRUD. Features CORS, Axios &amp; JSON serialization for seamless front-end integration.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tag">Java 21</span>
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">React JS</span>
+                            <span class="tag">Spring MVC</span>
+                            <span class="tag">Oracle DB</span>
+                            <span class="tag">REST API</span>
+                        </div>
+                        <a href="https://github.com/Rishupandey108/ShopX" target="_blank" class="inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-sm font-semibold text-brand-accent border border-brand-accent/30 hover:bg-brand-accent hover:text-black transition">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: AI Voice Assistant -->
+                <div class="project-card rounded-2xl overflow-hidden flex flex-col">
+                    <div class="h-2 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+                    <div class="p-7 flex flex-col h-full">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-xl">
+                                <i class="fas fa-microphone-alt"></i>
+                            </div>
+                            <a href="https://github.com/Rishupandey108/Talky-Ai" target="_blank" id="talkyai-github-btn" class="text-gray-400 hover:text-purple-400 transition text-lg" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">AI Desktop Voice Assistant <span class="text-purple-400">(Talky AI)</span></h3>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow">Desktop voice AI supporting 20+ voice &amp; text commands. Powered by LLaMA 3.3 70B for context-aware responses with chat history, plus a text-to-speech &amp; speech-to-text pipeline with Hinglish support.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tag" style="border-color:rgba(167,139,250,0.4);color:#c4b5fd">Python</span>
+                            <span class="tag" style="border-color:rgba(167,139,250,0.4);color:#c4b5fd">LLaMA 3</span>
+                            <span class="tag" style="border-color:rgba(167,139,250,0.4);color:#c4b5fd">Groq API</span>
+                            <span class="tag" style="border-color:rgba(167,139,250,0.4);color:#c4b5fd">Cohere AI</span>
+                            <span class="tag" style="border-color:rgba(167,139,250,0.4);color:#c4b5fd">PyQt5 GUI</span>
+                            <span class="tag" style="border-color:rgba(167,139,250,0.4);color:#c4b5fd">NLP</span>
+                        </div>
+                        <a href="https://github.com/Rishupandey108/Talky-Ai" target="_blank" class="inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-sm font-semibold text-purple-400 border border-purple-400/30 hover:bg-purple-500 hover:text-white transition">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Railway AI Ops -->
+                <div class="project-card rounded-2xl overflow-hidden flex flex-col">
+                    <div class="h-2 bg-gradient-to-r from-green-500 to-emerald-400"></div>
+                    <div class="p-7 flex flex-col h-full">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center text-green-400 text-xl">
+                                <i class="fas fa-train"></i>
+                            </div>
+                            <a href="https://srh-railway-project.onrender.com" target="_blank" id="railway-live-btn" class="text-gray-400 hover:text-green-400 transition text-lg" title="Live Demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="flex items-center gap-2 mb-2 flex-wrap">
+                            <h3 class="text-xl font-bold text-white">Railway AI Ops</h3>
+                            <span class="text-xs bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 px-2 py-0.5 rounded-full font-bold">SIH Hackathon</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow">AI-powered predictive maintenance for Indian Railways. XGBoost &amp; Decision Tree scans 11,000+ assets; CP-SAT schedules 188 maintenance tasks. Centralizes TMS, TDMS &amp; SMMS data.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tag" style="border-color:rgba(74,222,128,0.4);color:#86efac">Python</span>
+                            <span class="tag" style="border-color:rgba(74,222,128,0.4);color:#86efac">XGBoost</span>
+                            <span class="tag" style="border-color:rgba(74,222,128,0.4);color:#86efac">Decision Tree</span>
+                            <span class="tag" style="border-color:rgba(74,222,128,0.4);color:#86efac">OR-Tools</span>
+                            <span class="tag" style="border-color:rgba(74,222,128,0.4);color:#86efac">ML</span>
+                        </div>
+                        <a href="https://srh-railway-project.onrender.com" target="_blank" class="inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-sm font-semibold text-green-400 border border-green-400/30 hover:bg-green-500 hover:text-black transition">
+                            <i class="fas fa-rocket"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- GitHub CTA -->
+            <div class="mt-12 text-center">
+                <a href="https://github.com/Rishupandey108" target="_blank" id="all-projects-btn" class="inline-flex items-center gap-3 glass-card px-8 py-4 rounded-full text-sm font-bold border border-gray-700 hover:border-brand-accent hover:text-brand-accent transition hover:scale-105">
+                    <i class="fab fa-github text-xl"></i>
+                    View All Projects on GitHub
+                    <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE & EDUCATION -->
     <section id="experience" class="py-20 px-4 bg-slate-900/50">
         <div class="max-w-6xl mx-auto">
-        
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12"><span class="section-heading">Journey &amp; Education</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
-                    <h3 class="text-2xl font-bold mb-8 text-white flex items-center"><i class="fas fa-graduation-cap mr-3 text-brand-accent"></i> Education</h3>
+                    <h3 class="text-2xl font-bold mb-8 text-white flex items-center"><i class="fas fa-graduation-cap mr-3 text-brand-accent"></i>Education</h3>
                     <ol class="relative border-s border-gray-700">                  
                         <li class="mb-10 ms-4">
                             <div class="absolute w-3 h-3 bg-brand-accent rounded-full mt-1.5 -start-1.5 border border-gray-900"></div>
                             <time class="mb-1 text-sm font-normal leading-none text-gray-400">2023 - Present</time>
-                              <h3 class="text-lg font-semibold text-white">B.Tech (CSE)</h3>
-                              <p class="mb-4 text-base font-normal text-gray-400">BVC Institute of Technology and Science,<br>Amalapuram </p>
-                            <span class="bg-blue-900 text-blue-300 text-xs font-medium px-2.5 py-0.5 rounded">CGPA: 8.69</span>
+                            <h3 class="text-lg font-semibold text-white">B.Tech (CSE)</h3>
+                            <p class="mb-3 text-base font-normal text-gray-400">BVC Institute of Technology and Science,<br>Amalapuram</p>
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="bg-blue-900/50 text-blue-300 text-xs font-medium px-2.5 py-0.5 rounded">CGPA: 8.69</span>
+                                <span class="bg-gray-800 text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded">Reg: 23H41A0549</span>
+                            </div>
                         </li>
                         <li class="mb-10 ms-4">
                             <div class="absolute w-3 h-3 bg-gray-600 rounded-full mt-1.5 -start-1.5 border border-gray-900"></div>
                             <time class="mb-1 text-sm font-normal leading-none text-gray-400">2021 - 2023</time>
                             <h3 class="text-lg font-semibold text-white">Higher Secondary (12th)</h3>
-                              <p class="text-base font-normal text-gray-400">BSEB (State Board) - 77% </p>
+                            <p class="text-base font-normal text-gray-400">BSEB (State Board) - 77%</p>
                         </li>
                     </ol>
                 </div>
 
                 <div>
-                    <h3 class="text-2xl font-bold mb-8 text-white flex items-center"><i class="fas fa-briefcase mr-3 text-brand-accent"></i> Experience & Volunteering</h3>
-                    <div class="space-y-8 border-l-2 border-gray-700 ml-3 pl-6">
+                    <h3 class="text-2xl font-bold mb-8 text-white flex items-center"><i class="fas fa-briefcase mr-3 text-brand-accent"></i>Experience &amp; Volunteering</h3>
+                    <div class="space-y-6 border-l-2 border-gray-700 ml-3 pl-6">
                         
                         <div class="relative">
                             <div class="absolute -left-[31px] top-1 w-3 h-3 bg-brand-aws rounded-full border border-gray-900"></div>
-                              <h4 class="text-xl font-bold text-brand-aws">Servicenow System Administrator Internship</h4>
-                            <p class="text-gray-400 text-sm mb-2">Dec 2025 - feb 2026 | APSCHE & SmartBridge</p>
+                            <h4 class="text-lg font-bold text-brand-aws">ServiceNow System Administrator Internship</h4>
+                            <p class="text-gray-400 text-sm mb-2">Dec 2025 – Feb 2026 | APSCHE &amp; SmartBridge</p>
                             <div class="glass-card p-4 rounded-xl border border-gray-700">
-                                <p class="text-gray-300 text-sm">Completed 8-week intensive Internship with Live hands on session.</p>
+                                <p class="text-gray-300 text-sm">Completed 8-week intensive Internship with Live hands-on sessions in ServiceNow Administration.</p>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="absolute -left-[31px] top-1 w-3 h-3 bg-blue-400 rounded-full border border-gray-900"></div>
+                            <h4 class="text-lg font-bold text-blue-400">Java Full Stack Development</h4>
+                            <p class="text-gray-400 text-sm mb-2">July 2025 | Talent Shine India – 120 Hours Industrial Internship</p>
+                            <div class="glass-card p-4 rounded-xl border border-gray-700">
+                                <p class="text-gray-300 text-sm">120-hour industrial training covering full stack Java development with Spring Boot and React.</p>
                             </div>
                         </div>
 
                         <div class="relative">
                             <div class="absolute -left-[31px] top-1 w-3 h-3 bg-blue-500 rounded-full border border-gray-900"></div>
-                              <h4  class="text-xl font-bold text-blue-500">Cloud Virtual Internship</h4>
-                            <p class="text-gray-400 text-sm mb-2">Oct 2025 - Dec 2025 | AICTE & EduSkills</p>
+                            <h4 class="text-lg font-bold text-blue-500">Cloud Virtual Internship</h4>
+                            <p class="text-gray-400 text-sm mb-2">Oct 2025 – Dec 2025 | AICTE &amp; EduSkills</p>
                             <div class="glass-card p-4 rounded-xl border border-gray-700">
-                                <p class="text-gray-300 text-sm">Completed 10-week intensive Cloud Virtual Internship with AWS Academy curriculum with help of EduSkills.   Achieved Grade O (Outstanding).</p>
+                                <p class="text-gray-300 text-sm">Completed 10-week intensive Cloud Virtual Internship with AWS Academy curriculum. Achieved Grade O (Outstanding).</p>
                             </div>
                         </div>
 
-                         <div class="relative">
-                            <div class="absolute -left-[31px] top-1 w-3 h-3 bg-blue-400  rounded-full border border-gray-900"></div>
-                            <h4 class="text-xl font-bold text-blue-400" >Student Volunteer</h4>
+                        <div class="relative">
+                            <div class="absolute -left-[31px] top-1 w-3 h-3 bg-blue-400 rounded-full border border-gray-900"></div>
+                            <h4 class="text-lg font-bold text-blue-400">Student Volunteer</h4>
                             <p class="text-gray-400 text-sm mb-2">2025 | IEEE Vizag Bay Section</p>
                             <div class="glass-card p-4 rounded-xl border border-gray-700">
                                 <h5 class="text-sm font-semibold text-white">IEEE Vizag Bay Section Student Congress 2025</h5>
@@ -246,76 +470,91 @@
                         </div>
 
                         <div class="relative">
-                            <div class="absolute -left-[31px] top-1 w-3 h-3  bg-brand-accent rounded-full border border-gray-900"></div>
-                              <h4 class="text-xl font-bold text-brand-accent">IEEE CS Student Chair[2025-2026]</h4>
-                            <p class="text-gray-400 text-sm mb-2">Leadership</p>
+                            <div class="absolute -left-[31px] top-1 w-3 h-3 bg-brand-accent rounded-full border border-gray-900"></div>
+                            <h4 class="text-lg font-bold text-brand-accent">IEEE CS Student Chair [2025–2026]</h4>
+                            <p class="text-gray-400 text-sm mb-2">Leadership | BVC Institute</p>
                             <div class="glass-card p-4 rounded-xl border border-gray-700">
-                                <p class="text-gray-300 text-sm">Spearheaded chapter activities, coordinated technical events, and promoted computer education.</p>
+                                <p class="text-gray-300 text-sm">Spearheaded chapter activities, coordinated technical events, mentored 20+ students, and promoted computer education.</p>
                             </div>
                         </div>
 
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
+    <!-- CERTIFICATIONS SECTION -->
     <section id="certifications" class="py-20 px-4">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Certified Accomplishments</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12"><span class="section-heading">Certified Accomplishments</span></h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center border border-brand-aws/30 hover:bg-brand-aws/10 transition">
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center border border-brand-aws/30 hover:bg-brand-aws/10 transition hover:-translate-y-2 duration-300">
                     <img src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84727909ea/image.png" alt="AWS Badge" class="w-24 h-24 mb-4 object-contain">
-                      <h3 class="font-bold text-lg text-white mb-1">AWS Academy Graduate </h3>
+                    <h3 class="font-bold text-lg text-white mb-1">AWS Academy Graduate</h3>
                     <p class="text-brand-aws font-semibold text-sm mb-2">Cloud Architecting</p>
-                      <p class="text-xs text-gray-400 mb-4">Completed 60 Hours • Dec 2025</p>
+                    <p class="text-xs text-gray-400 mb-4">Completed 60 Hours &bull; Dec 2025</p>
                     <a href="https://www.credly.com/go/PYnywAiO" target="_blank" class="text-xs border border-brand-aws text-brand-aws px-3 py-1 rounded hover:bg-brand-aws hover:text-black transition">Verify Badge</a>
                 </div>
 
-                <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center border border-brand-aws/30 hover:bg-brand-aws/10 transition">
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center border border-brand-aws/30 hover:bg-brand-aws/10 transition hover:-translate-y-2 duration-300">
                     <img src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84727909ea/image.png" alt="AWS Badge" class="w-24 h-24 mb-4 object-contain">
-                      <h3 class="font-bold text-lg text-white mb-1">AWS Academy Graduate </h3>
+                    <h3 class="font-bold text-lg text-white mb-1">AWS Academy Graduate</h3>
                     <p class="text-brand-aws font-semibold text-sm mb-2">Cloud Foundations</p>
-                      <p class="text-xs text-gray-400 mb-4">Completed 20 Hours • Dec 2025 </p>
+                    <p class="text-xs text-gray-400 mb-4">Completed 20 Hours &bull; Dec 2025</p>
                     <a href="https://www.credly.com/go/IEQhHDnN" target="_blank" class="text-xs border border-brand-aws text-brand-aws px-3 py-1 rounded hover:bg-brand-aws hover:text-black transition">Verify Badge</a>
                 </div>
 
-                <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center border border-purple-500/30 hover:bg-purple-500/10 transition">
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center border border-purple-500/30 hover:bg-purple-500/10 transition hover:-translate-y-2 duration-300">
                     <div class="w-24 h-24 mb-4 flex items-center justify-center bg-purple-900/50 rounded-full text-3xl text-purple-300">
                         <i class="fas fa-tools"></i>
                     </div>
                     <h3 class="font-bold text-lg text-white mb-1">ServiceNow Admin</h3>
-                    <p class="text-purple-400 font-semibold text-sm mb-2">Training Completed</p>
-                    <p class="text-xs text-gray-400 mb-4">Administrator Training</p>
-                    <span >Skill Verified</span>
-                    <a href=" https://www.credly.com/badges/35acbc19-53a6-4870-a046-ec1de2e21ac3/public_url" target="_blank" class="text-xs border border-purple-500 text-purple-400 px-3 py-1 rounded">Verify Badge</a>
+                    <p class="text-purple-400 font-semibold text-sm mb-2">Micro-Certification</p>
+                    <p class="text-xs text-gray-400 mb-2">Administrator Training</p>
+                    <p class="text-xs text-green-400 mb-3 font-semibold">&#10003; Skill Verified</p>
+                    <a href="https://www.credly.com/badges/35acbc19-53a6-4870-a046-ec1de2e21ac3/public_url" target="_blank" class="text-xs border border-purple-500 text-purple-400 px-3 py-1 rounded hover:bg-purple-600 hover:text-white transition">Verify Badge</a>
                 </div>
             </div>
 
+            <!-- Additional Certs -->
             <div class="mt-12 glass-card p-8 rounded-2xl">
                 <h4 class="text-xl font-bold mb-6 text-brand-accent">Additional Certifications</h4>
                 <div class="flex flex-wrap gap-3">
-                      <span class="px-4 py-2 bg-gray-800 rounded-lg text-sm text-gray-300 border border-gray-600">Oracle: Java Fundamentals </span>
-                      <span class="px-4 py-2 bg-gray-800 rounded-lg text-sm text-gray-300 border border-gray-600">Oracle: Java Programming</span>
-                      <span class="px-4 py-2 bg-gray-800 rounded-lg text-sm text-gray-300 border border-gray-600">Infosys: HTML 5 </span>
-                      <span class="px-4 py-2 bg-gray-800 rounded-lg text-sm text-gray-300 border border-gray-600">Talentshine: Java Full Stack </span>
+                    <span class="px-4 py-2 bg-gray-800 rounded-lg text-sm text-gray-300 border border-gray-600 hover:border-orange-400 transition">Oracle: Java Fundamentals</span>
+                    <span class="px-4 py-2 bg-gray-800 rounded-lg text-sm text-gray-300 border border-gray-600 hover:border-orange-400 transition">Oracle: Java Programming</span>
+                    <span class="px-4 py-2 bg-gray-800 rounded-lg text-sm text-gray-300 border border-gray-600 hover:border-blue-400 transition">Infosys: HTML5</span>
+                    <span class="px-4 py-2 bg-gray-800 rounded-lg text-sm text-gray-300 border border-gray-600 hover:border-cyan-400 transition">Talentshine: Java Full Stack</span>
+                    <span class="px-4 py-2 bg-gray-800 rounded-lg text-sm text-gray-300 border border-gray-600 hover:border-green-400 transition">HackerRank: SQL</span>
+                    <span class="px-4 py-2 bg-gray-800 rounded-lg text-sm text-gray-300 border border-gray-600 hover:border-purple-400 transition">IBM: Generative AI</span>
+                    <span class="px-4 py-2 bg-gray-800 rounded-lg text-sm text-gray-300 border border-gray-600 hover:border-blue-400 transition">NPTEL: Ethical Hacking</span>
+                    <span class="px-4 py-2 bg-gray-800 rounded-lg text-sm text-gray-300 border border-gray-600 hover:border-yellow-400 transition">NMMS Scholar</span>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="bg-gray-900 border-t border-gray-800 py-12">
         <div class="max-w-screen-xl mx-auto px-4 text-center">
             <h2 class="text-2xl font-bold text-white mb-6">Let's Connect</h2>
             <div class="flex justify-center space-x-6 mb-8">
-                <a href="mailto:rishupadney9546@gmail.com" class="text-gray-400 hover:text-white text-2xl transition"><i class="fas fa-envelope"></i></a>
-                <a href="https://linkedin.com/in/rishu-pandey-776907292" target="_blank" class="text-gray-400 hover:text-white text-2xl transition"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.credly.com/users/rishu-pandey.98961016" target="_blank" class="text-gray-400 hover:text-white text-2xl transition"><i class="fas fa-award"></i></a>
+                <a href="mailto:rishupadney9546@gmail.com" id="footer-email" class="text-gray-400 hover:text-white text-2xl transition hover:scale-125" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/rishu-pandey-776907292" target="_blank" id="footer-linkedin" class="text-gray-400 hover:text-blue-400 text-2xl transition hover:scale-125" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Rishupandey108" target="_blank" id="footer-github" class="text-gray-400 hover:text-white text-2xl transition hover:scale-125" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://leetcode.com/u/23h41a0549/" target="_blank" id="footer-leetcode" class="text-gray-400 hover:text-yellow-400 text-2xl transition hover:scale-125" title="LeetCode"><i class="fas fa-code"></i></a>
+                <a href="https://www.credly.com/users/rishu-pandey.98961016" target="_blank" id="footer-credly" class="text-gray-400 hover:text-brand-aws text-2xl transition hover:scale-125" title="Credly Badges"><i class="fas fa-award"></i></a>
             </div>
-            <p class="text-gray-500 text-sm">© 2025 Rishu Pandey. All rights reserved.</p>
-              <p class="text-gray-600 text-xs mt-2">Hasanpur, Gopalganj, Bihar-841405 </p>
+            <p class="text-gray-500 text-sm">&copy; 2026 Rishu Pandey. All rights reserved.</p>
+            <p class="text-gray-600 text-xs mt-2">Hasanpur, Gopalganj, Bihar &ndash; 841405</p>
+            <div class="mt-4 flex justify-center gap-4 text-xs text-gray-600 flex-wrap">
+                <a href="https://leetcode.com/u/23h41a0549/" target="_blank" class="hover:text-yellow-400 transition">LeetCode Profile</a>
+                <span>&bull;</span>
+                <a href="https://github.com/Rishupandey108" target="_blank" class="hover:text-white transition">GitHub</a>
+                <span>&bull;</span>
+                <a href="https://linkedin.com/in/rishu-pandey-776907292" target="_blank" class="hover:text-blue-400 transition">LinkedIn</a>
+            </div>
         </div>
     </footer>
 
